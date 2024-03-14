@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.EditClientFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--Profile picture-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_layout"
+            android:background="@color/colorPrimaryDarkGreen"
+            android:id="@+id/pro_pic_layout">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageDevice"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_device_hub_100"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDevice"
+                android:hint="@string/my_device"
+                android:layout_below="@id/imageDevice"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/white"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="39dp"
+                android:layout_marginEnd="54dp"
+                android:layout_marginBottom="33dp"
+                android:layout_toStartOf="@+id/textViewDevice"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <!--Device Details-->
+
+        <RelativeLayout
+            android:id="@+id/details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/profile_details_spacing"
+            android:padding="@dimen/profile_details_spacing">
+
+            <!--Device name-->
+            <TextView
+                android:id="@+id/text_deviceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/name"
+                android:textSize="@dimen/display_text_size" />
+
+            <EditText
+                android:id="@+id/etextViewDeviceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/text_deviceName"
+                android:layout_alignStart="@+id/text_deviceName"
+                android:layout_marginStart="150dp"
+                android:autofillHints="@string/device_name"
+                android:hint="@string/device_name"
+                android:textSize="@dimen/display_text_size" />
+
+            <View
+                android:id="@+id/divider_name"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/etextViewDeviceName"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDarkGreen" />
+
+            <!--Device usage-->
+            <TextView
+                android:id="@+id/textview_deviceUsage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/divider_name"
+                android:layout_marginTop="20dp"
+                android:text="@string/hours_used_day"
+                android:textSize="@dimen/display_text_size" />
+
+            <EditText
+                android:id="@+id/etextViewDisplayHourUsage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_name"
+                android:layout_alignBaseline="@id/textview_deviceUsage"
+                android:layout_alignStart="@+id/textview_deviceUsage"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="20dp"
+                android:hint="@string/_0"
+                android:textSize="@dimen/display_text_size" />
+
+            <View
+                android:id="@+id/divider_usage"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/etextViewDisplayHourUsage"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDarkGreen" />
+
+            <!--Device power rating-->
+            <TextView
+                android:id="@+id/textview_powerRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_usage"
+                android:layout_marginTop="20dp"
+                android:text="@string/power_rating_w"
+                android:textSize="@dimen/display_text_size" />
+
+            <EditText
+                android:id="@+id/etextViewDisplayPowerRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_usage"
+                android:layout_alignBaseline="@id/textview_powerRating"
+                android:layout_alignStart="@+id/textview_powerRating"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="20dp"
+                android:hint="@string/_0"
+                android:textSize="@dimen/display_text_size" />
+
+            <View
+                android:id="@+id/divider_power"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/etextViewDisplayPowerRating"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDarkGreen" />
+
+            <!--Number of devices-->
+            <TextView
+                android:id="@+id/textview_numberDevices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_power"
+                android:layout_marginTop="20dp"
+                android:text="@string/number"
+                android:textSize="@dimen/display_text_size" />
+
+            <EditText
+                android:id="@+id/etextViewDisplayNumberDevices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_power"
+                android:layout_alignStart="@+id/textview_numberDevices"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignBaseline="@id/textview_numberDevices"
+                android:hint="@string/_0"
+                android:textSize="@dimen/display_text_size" />
+
+            <View
+                android:id="@+id/divider_number"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/etextViewDisplayNumberDevices"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDarkGreen" />
+
+            <!--Device cost per watt-->
+            <TextView
+                android:id="@+id/textview_divider_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_number"
+                android:layout_marginTop="20dp"
+                android:text="@string/cost_watt_eur"
+                android:textSize="@dimen/display_text_size" />
+
+            <TextView
+                android:id="@+id/textViewDisplayCostWatt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_number"
+                android:layout_alignStart="@+id/textview_divider_number"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignBaseline="@id/textview_divider_number"
+                android:hint="@string/please_update_e_provider_settings"
+                android:textSize="@dimen/display_text_size" />
+
+            <View
+                android:id="@+id/divider_cost_watt"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewDisplayCostWatt"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDarkGreen" />
+
+            <!--Device cost per day-->
+            <TextView
+                android:id="@+id/textview_cost_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_cost_watt"
+                android:layout_marginTop="20dp"
+                android:text="@string/cost_day"
+                android:textSize="@dimen/display_text_size" />
+
+            <TextView
+                android:id="@+id/textViewDisplayCostDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_cost_watt"
+                android:layout_alignStart="@+id/textview_cost_day"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignBaseline="@id/textview_cost_day"
+                android:hint="@string/please_update_e_provider_settings"
+                android:textSize="@dimen/display_text_size" />
+
+            <View
+                android:id="@+id/divider_cost_day"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewDisplayCostDay"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDarkGreen" />
+
+            <Button
+                android:id="@+id/updateDeviceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/divider_cost_day"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="54dp"
+                android:text="@string/update" />
+
+            <Button
+                android:id="@+id/deleteDeviceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/divider_cost_day"
+                android:layout_alignBaseline="@id/updateDeviceButton"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="54dp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/delete" />
+
+            <ProgressBar
+                android:id="@+id/updateDeviceProgressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/updateDeviceButton"
+                android:layout_below="@+id/divider_cost_day"
+                android:layout_alignStart="@+id/updateDeviceButton"
+                android:layout_alignEnd="@+id/updateDeviceButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="-17dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

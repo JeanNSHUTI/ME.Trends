@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--Profile picture-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_layout"
+            android:background="@color/colorPrimaryDarkGreen">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/imageViewProfilePic"
+                android:layout_centerInParent="true"
+                android:background="@drawable/no_profile_pic"/>
+
+            <TextView
+                android:id="@+id/textViewWelcomeMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageViewProfilePic"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/profile_welcome_msg"
+                android:hint="@string/loading"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/white"
+                android:textColorHint="#212121" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/imageViewProfilePic"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="233dp"
+                android:layout_marginBottom="202dp"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
+        <!--Profile Details-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/profile_details_spacing"
+            android:layout_margin="@dimen/profile_details_spacing">
+
+            <!--Client name-->
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/textview_profilename"
+                android:background="@drawable/icons_filled_profile_32"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDisplayFullname"
+                android:layout_alignStart="@+id/textview_profilename"
+                android:hint="@string/first_name_last_name"
+                android:layout_marginStart="50dp"
+                android:textSize="@dimen/display_text_size"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textview_profilename"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_name"
+                android:layout_marginTop="20dp"/>
+
+            <!--Client mail-->
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/textview_email"
+                android:background="@drawable/icons_secured_letter_32"
+                android:layout_below="@+id/divider_name"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDisplayEmail"
+                android:layout_alignStart="@+id/textview_email"
+                android:hint="@string/email"
+                android:layout_marginStart="50dp"
+                android:textSize="@dimen/display_text_size"
+                android:layout_below="@+id/divider_name"
+                android:layout_marginTop="20dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/textViewDisplayEmail"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_email"/>
+
+            <!--Client energy provider-->
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/textview_ep"
+                android:background="@drawable/icons8_electrical_32"
+                android:layout_below="@+id/divider_email"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDisplayEP"
+                android:layout_alignStart="@+id/textview_ep"
+                android:hint="@string/energy_provider"
+                android:layout_marginStart="50dp"
+                android:textSize="@dimen/display_text_size"
+                android:layout_below="@+id/divider_email"
+                android:layout_marginTop="20dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/textViewDisplayEP"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_ep"/>
+
+            <!--Client street name and number-->
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/textview_street_address"
+                android:background="@drawable/icons_home_address_32"
+                android:layout_below="@+id/divider_ep"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDisplayStreetAddress"
+                android:layout_alignStart="@+id/textview_street_address"
+                android:hint="@string/street_name_house_number"
+                android:layout_marginStart="50dp"
+                android:textSize="@dimen/display_text_size"
+                android:layout_below="@+id/divider_ep"
+                android:layout_marginTop="20dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/textViewDisplayStreetAddress"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_street"/>
+
+            <!--Client city postal code-->
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/textview_city_postalcode"
+                android:background="@drawable/icons_home_address_32"
+                android:layout_below="@+id/divider_street"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDisplayCityPC"
+                android:layout_alignStart="@+id/textview_city_postalcode"
+                android:hint="@string/city_postal_code"
+                android:layout_marginStart="50dp"
+                android:textSize="@dimen/display_text_size"
+                android:layout_below="@+id/divider_street"
+                android:layout_marginTop="20dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/textViewDisplayCityPC"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_city_postalcode"/>
+
+            <!--Client State province and country-->
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/textview_province_country"
+                android:background="@drawable/icons_country_80"
+                android:layout_below="@+id/divider_city_postalcode"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDisplayProvinceCountry"
+                android:layout_alignStart="@+id/textview_province_country"
+                android:hint="@string/region_country"
+                android:layout_marginStart="50dp"
+                android:textSize="@dimen/display_text_size"
+                android:layout_below="@+id/divider_city_postalcode"
+                android:layout_marginTop="20dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/textViewDisplayProvinceCountry"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_province_country"/>
+
+            <Button
+                android:id="@+id/buttonEdit"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_province_country"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="32dp"
+                android:text="@string/edit" />
+
+            <Button
+                android:id="@+id/buttonUploadPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_province_country"
+                android:layout_marginTop="40dp"
+                android:drawableLeft="@drawable/icons_camera_16"
+                android:layout_alignBaseline="@id/buttonEdit"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="32dp"
+                android:text="@string/upload" />
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

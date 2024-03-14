@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.meters.DetailsMetersFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Ep Name and header-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/material_dynamic_neutral80"
+            android:id="@+id/meter_name_layout">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/imageMeter"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/icons_energy_meter_80"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etextViewMeterName"
+                android:hint="@string/meter_name"
+                android:layout_alignBaseline="@+id/imageMeter"
+                android:layout_alignStart="@+id/imageMeter"
+                android:layout_marginStart="60dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="24dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/update_MeterName"
+                android:text="@string/update"
+                android:textSize="12sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignBaseline="@id/imageMeter"
+                android:layout_alignStart="@id/etextViewMeterName"
+                android:layout_marginStart="210dp"
+                android:layout_marginTop="24dp"/>
+        </RelativeLayout>
+
+        <!-- Invoice details -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/records_header"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:text="@string/please_add_your_first_record"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/records_header"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:id="@android:id/list"
+                android:paddingBottom="0dp"
+                android:visibility="gone">
+
+            </ListView>
+
+
+        </RelativeLayout>
+
+        <!-- Add records button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/profile_details_spacing"
+            android:layout_margin="@dimen/profile_details_spacing"
+            android:id="@+id/invoices_layout">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addRecordButton"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_alignParentStart="true"
+                android:drawableLeft="@drawable/icons_hand_pen_16"
+                android:text="@string/add" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addRecordCamButton"
+                android:layout_marginTop="40dp"
+                android:layout_alignBaseline="@+id/addRecordButton"
+                android:layout_alignStart="@+id/addRecordButton"
+                android:layout_marginStart="120dp"
+                android:drawableLeft="@drawable/icons_camera_16"
+                android:text="@string/add"/>
+
+            <!-- Invisible delete button-->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/deleteRecordButton"
+                android:layout_marginTop="40dp"
+                android:layout_alignBaseline="@+id/addRecordButton"
+                android:layout_alignStart="@+id/addRecordButton"
+                android:layout_marginStart="240dp"
+                android:text="@string/delete"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="8dp"
+                android:visibility="gone"/>
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

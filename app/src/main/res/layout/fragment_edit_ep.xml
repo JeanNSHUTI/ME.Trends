@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.energy_provider.EditEpFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/user_stats"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:background="@color/colorPrimaryGreen"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:padding="8dp"
+            android:layout_marginTop="64dp"
+            android:layout_margin="@dimen/profile_details_spacing"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/profile_details_spacing"
+            android:layout_margin="@dimen/profile_details_spacing"
+            android:id="@+id/consumption_layout">
+
+            <!--Gas yearly usage-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview_gasConsumption"
+                android:text="@string/gas_yearly_consumption"
+                android:textSize="@dimen/small_text_size"/>
+
+            <TextView
+                android:id="@+id/etextViewGasConsumption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_gasConsumption"
+                android:layout_marginStart="220dp"
+                android:text="@string/not_yet_defined"
+                android:textSize="@dimen/small_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/etextViewGasConsumption"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_gas"
+                android:layout_marginTop="15dp"/>
+
+            <!--Electric yearly usage -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textview_electricConsumption"
+                android:text="@string/electric_yearly_consumption"
+                android:textSize="@dimen/small_text_size"
+                android:layout_below="@+id/divider_gas"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/etextViewDisplayElectricUsage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_gas"
+                android:layout_alignStart="@+id/textview_electricConsumption"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/not_yet_defined"
+                android:textSize="@dimen/small_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/etextViewDisplayElectricUsage"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_elec"/>
+
+            <!--Water yearly usage -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textview_waterConsumption"
+                android:text="@string/water_yearly_consumption"
+                android:textSize="@dimen/small_text_size"
+                android:layout_below="@+id/divider_elec"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/etextViewDisplayWaterUsage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_elec"
+                android:layout_alignStart="@+id/textview_waterConsumption"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/not_yet_defined"
+                android:textSize="@dimen/small_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/etextViewDisplayWaterUsage"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_water"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/invoice_details"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:background="@color/colorPrimaryGreen"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:padding="8dp"
+            android:layout_margin="@dimen/profile_details_spacing"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/profile_details_spacing"
+            android:layout_margin="@dimen/profile_details_spacing"
+            android:id="@+id/invoices_layout">
+
+            <!--Invoice start date-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview_invoiceStartDate"
+                android:text="@string/start_date"
+                android:textSize="@dimen/small_text_size"/>
+
+            <EditText
+                android:id="@+id/etextViewStartDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_invoiceStartDate"
+                android:layout_marginStart="220dp"
+                android:autofillHints="@string/device_name"
+                android:hint="@string/yyyy_mm_dd"
+                android:minHeight="48dp"
+                android:textSize="@dimen/small_text_size"
+                android:layout_alignBaseline="@+id/textview_invoiceStartDate"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/etextViewStartDate"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_start_date"
+                android:layout_marginTop="15dp"/>
+
+            <!--invoice end date-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textview_deviceUsage"
+                android:text="@string/end_date"
+                android:textSize="@dimen/small_text_size"
+                android:layout_below="@+id/divider_start_date"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etextViewDisplayEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_start_date"
+                android:layout_alignStart="@+id/textview_deviceUsage"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="15dp"
+                android:hint="@string/yyyy_mm_dd"
+                android:minHeight="48dp"
+                android:textSize="@dimen/small_text_size"
+                android:layout_alignBaseline="@+id/textview_deviceUsage"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/etextViewDisplayEndDate"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_end_date"/>
+
+            <!--Invoice gas yearly consumption-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview_inGasCon"
+                android:text="@string/gas_yearly_consumption"
+                android:textSize="@dimen/small_text_size"
+                android:layout_below="@+id/divider_end_date"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etextViewDisplayInGasCon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_end_date"
+                android:layout_alignStart="@+id/textview_inGasCon"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="15dp"
+                android:hint="@string/cubic_meters_m3"
+                android:minHeight="48dp"
+                android:textSize="@dimen/small_text_size"
+                android:layout_alignBaseline="@+id/textview_inGasCon"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/etextViewDisplayInGasCon"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_inGasCon"/>
+
+            <!--Electric yearly consumption-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview_inElecCon"
+                android:text="@string/electric_yearly_consumption"
+                android:textSize="@dimen/small_text_size"
+                android:layout_below="@+id/divider_inGasCon"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etextViewDisplayInElecCon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_inGasCon"
+                android:layout_alignStart="@+id/textview_inElecCon"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="15dp"
+                android:layout_alignBaseline="@+id/textview_inElecCon"
+                android:hint="@string/kwh"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:textSize="@dimen/small_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/etextViewDisplayInElecCon"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_inElecCon"/>
+
+            <!--Water yearly consumption-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview_inWaterCon"
+                android:text="@string/water_yearly_consumption"
+                android:textSize="@dimen/small_text_size"
+                android:layout_below="@+id/divider_inElecCon"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etextViewDisplayInWaterCon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_inElecCon"
+                android:layout_alignStart="@+id/textview_inWaterCon"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="15dp"
+                android:hint="@string/cubic_meters_m3"
+                android:minHeight="48dp"
+                android:textSize="@dimen/small_text_size"
+                android:layout_alignBaseline="@+id/textview_inWaterCon"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/etextViewDisplayInWaterCon"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_inWaterCon"/>
+
+            <!--Consumption charge-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview_ChargeCon"
+                android:text="@string/consumption_charge_eur"
+                android:textSize="@dimen/small_text_size"
+                android:layout_below="@+id/divider_inWaterCon"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etextViewDisplayChargeCon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_inWaterCon"
+                android:layout_alignStart="@+id/textview_ChargeCon"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="15dp"
+                android:hint="@string/eur_an"
+                android:textSize="@dimen/small_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/etextViewDisplayChargeCon"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_charge"/>
+
+            <!--Cost per watt-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview_CostKwh"
+                android:text="@string/cost_watt_eur"
+                android:textSize="@dimen/small_text_size"
+                android:layout_below="@+id/divider_charge"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/etextViewDisplayCostKwh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_charge"
+                android:layout_alignStart="@+id/textview_ChargeCon"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="15dp"
+                android:hint="@string/c_kwh"
+                android:textSize="@dimen/small_text_size"
+                android:layout_alignBaseline="@+id/textview_CostKwh"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/etextViewDisplayCostKwh"
+                android:background="@color/colorPrimaryDarkGreen"
+                android:id="@+id/divider_cost_kwh"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider_cost_kwh"
+                android:id="@+id/saveButton"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_alignParentStart="true"
+                android:text="@string/save" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider_cost_kwh"
+                android:id="@+id/deleteButton"
+                android:layout_marginTop="40dp"
+                android:layout_alignBaseline="@+id/saveButton"
+                android:layout_alignStart="@+id/saveButton"
+                android:layout_marginStart="180dp"
+                android:text="@string/delete"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

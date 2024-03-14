@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.energy_provider.EnergyProviderFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Ep Name and header-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/material_dynamic_neutral80"
+            android:id="@+id/ep_name_layout">
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="8dp"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/imageEnergyProvider"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="32dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/icons_ele_50"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/etextViewEnergyProviderName"
+                android:hint="@string/energy_provider"
+                android:layout_alignBaseline="@+id/imageEnergyProvider"
+                android:layout_alignStart="@+id/imageEnergyProvider"
+                android:layout_marginStart="60dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="24dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/update_epName"
+                android:text="@string/update"
+                android:textSize="12sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignBaseline="@id/imageEnergyProvider"
+                android:layout_alignStart="@id/etextViewEnergyProviderName"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="24dp"/>
+        </RelativeLayout>
+
+        <!-- Invoice details -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/energyprovider_header"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:text="@string/please_add_an_invoice"/>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/energyprovider_header"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:id="@android:id/list"
+                android:paddingBottom="0dp"
+                android:visibility="gone">
+
+            </ListView>
+
+
+        </RelativeLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabInvoices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/submit"
+            android:src="@drawable/ic_add_24"
+            app:backgroundTint="@color/colorPrimaryGreen" />
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

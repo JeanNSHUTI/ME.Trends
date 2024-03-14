@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_person_24"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_energy_provider"
+            android:icon="@drawable/ic_electrical_services_24"
+            android:title="@string/energy_provider" />
+
+        <item
+            android:id="@+id/nav_mydevices"
+            android:icon="@drawable/ic_devices_24"
+            android:title="@string/my_devices" />
+
+        <item
+            android:id="@+id/nav_meters"
+            android:icon="@drawable/ic_electric_meter_24"
+            android:title="@string/my_meters" />
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_dashboard_24"
+            android:title="@string/dashboard" />
+    </group>
+</menu>
